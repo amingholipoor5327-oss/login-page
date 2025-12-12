@@ -1,0 +1,137 @@
+ <!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سامانه دانشجویی دانشگاه آزاد اسلامی</title>
+    <meta name="description" content="سامانه آموزشیار دانشگاه آزاد اسلامی - ورود به سیستم">
+    <meta name="keywords" content="دانشگاه آزاد, سامانه دانشجویی, آموزشیار, ورود به سیستم">
+    <meta name="author" content="دانشگاه آزاد اسلامی">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <p class="welcome">welcome</p>   
+    </header>
+
+    <main class="container">
+        <fieldset class="portal-card" id="portalCard">
+            <legend class="visually-hidden">پورتال دانشجویی</legend>
+
+            <div class="logos-section">
+                <div class="logo-item">
+                    <img src="./image/amozesh.png " alt="لوگوی دانشگاه آزاد اسلامی" width="120" height="80">
+                </div>
+                <div class="logo-item">
+                    <img src="./image/azad.png" alt="سامانه آموزشیار" width="160" height="80">
+                </div>
+                <div class="logo-item">
+                    <img src="./image/danesh.png" alt="وزارت علوم، تحقیقات و فناوری" width="120" height="80">
+                </div>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="content-section">
+                <div class="info-section">
+                    <h1 class="portal-title">سامانه دانشجویی دانشگاه آزاد اسلامی</h1>
+
+                    <div class="info-box">
+                        <p class="info-text">
+                            امکان انجام امور آموزشی، واریز شهریه و پرداخت پیش از موعد، بدون محدودیت زمانی 
+                            از طریق لینک زیر در سامانه آموزشیار فعال می‌باشد.
+                        </p>
+
+                        <a href="http://eserv.iau.ir/EServices" class="service-link" target="_blank" rel="noopener noreferrer">
+                            http://eserv.iau.ir/EServices
+                        </a>
+
+                        <div class="warning-box">
+                            <p class="warning-text">
+                                <strong>توجه دانشجویان گرامی:</strong> جهت اتصال به سامانه حتماً از مرورگر 
+                                کروم یا فایرفاکس استفاده نمائید. در صورت مواجهه با مشکل در فراموشی رمز، 
+                                لطفاً کش مرورگر خود را پاک نمائید.
+                            </p>
+                        </div>
+                    </div>
+
+                    <footer class="copyright">
+                        <p>کلیه حقوق استفاده از سیستم آموزشیار © متعلق به <strong>دانشگاه آزاد اسلامی</strong> است</p>
+                    </footer>
+                </div>
+
+                <div class="login-section">
+                    <form id="loginForm" class="login-form">
+                        <h2 class="form-title">ورود به سامانه</h2>
+
+                        <div class="form-group">
+                            <label for="studentId" class="form-label">
+                                شماره دانشجویی
+                            </label>
+                            <input type="text" id="studentId" name="studentId" 
+                                   class="form-input"
+                                   placeholder="مثال: 4012345678"
+                                   pattern="[0-9]{10}"
+                                   title="لطفاً شماره دانشجویی ۱۰ رقمی وارد کنید"
+                                   required>
+                            <span class="form-error" id="studentIdError"></span>
+                        </div>
+
+ <div class="form-group">
+                            <label for="password" class="form-label">
+                                کلمه عبور
+                            </label>
+                            <input type="password" id="password" name="password" 
+                                   class="form-input"
+                                   placeholder="رمز عبور خود را وارد کنید"
+                                   minlength="6"
+                                   required>
+                            <span class="form-error" id="passwordError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="captchaInput" class="form-label">
+                                کد امنیتی
+                            </label>
+                            <div class="captcha-container">
+                                <div class="captcha-display" id="captchaDisplay">
+                                    <span id="captchaText">5449</span>
+                                </div>
+                                <button type="button" class="captcha-refresh" id="refreshCaptcha" 
+                                        aria-label="تولید کد امنیتی جدید">
+                                    <img src="./image/refresh_.gif" alt="تازه‌سازی" width="20" height="20">
+                                    <span>کد جدید</span>
+                                </button>
+                            </div>
+                            <input type="text" id="captchaInput" name="captcha" 
+                                   class="form-input captcha-input"
+                                   placeholder="کد بالا را وارد کنید"
+                                   required>
+                            <span class="form-error" id="captchaError"></span>
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="loginBtn">
+                            <span>ورود به سیستم</span>
+                            <span class="loading-spinner" id="loadingSpinner"></span>
+                        </button>
+
+                        <div class="form-links">
+                            <a href="#forgot-password" class="forgot-link">
+                                فراموشی رمز عبور
+                            </a>
+                            <a href="#help" class="help-link">
+                                راهنمای استفاده
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </fieldset>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
